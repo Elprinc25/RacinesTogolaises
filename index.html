@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Racines Togolaises - Accueil</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'togo-green': '#006b3f',
+                        'togo-yellow': '#ffce00',
+                        'togo-red': '#d21034',
+                        'togo-white': '#ffffff'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .togo-banner {
+            background: linear-gradient(to right, #006b3f 20%, #006b3f 20% 40%, #006b3f 40% 60%, #006b3f 60% 80%, #006b3f 80%);
+            background-image: url(Travel\ to\ Togo.jpg);
+            background-repeat: no-repeat;
+            background-position: center;
+            background-size: cover;
+            width: 100%;
+            height: 50vh;
+        }
+        .section-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Barre de Navigation -->
+    <nav class="bg-togo-green text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold">Racines Togolaises</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="py-2 px-3 bg-togo-yellow text-togo-green rounded-md font-medium">Accueil</a>
+                    <a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a>
+                    <a href="evenements.html" class="hover:text-togo-yellow transition duration-300">Événements</a>
+                    <a href="partage.html" class="hover:text-togo-yellow transition duration-300">Partage</a>
+                    <a href="education.html" class="hover:text-togo-yellow transition duration-300">Éducation</a>
+                    <a href="gouv.html" class="hover:text-togo-yellow transition duration-300">Gouv</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="flex flex-col space-y-4 py-4">
+                    <a href="index.html" class="py-2 px-3 bg-togo-yellow text-togo-green rounded-md font-medium">Accueil</a>
+                    <a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a>
+                    <a href="evenements.html" class="hover:text-togo-yellow transition duration-300">Événements</a>
+                    <a href="partage.html" class="hover:text-togo-yellow transition duration-300">Partage</a>
+                    <a href="education.html" class="hover:text-togo-yellow transition duration-300">Éducation</a>
+                    <a href="gouv.html" class="hover:text-togo-yellow transition duration-300">Gouv</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="togo-banner py-20 mb-10">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-6xl font-bold mb-4 text-white drop-shadow-lg">Bienvenue au Togo</h1>
+            <p class="text-xl md:text-2xl text-white drop-shadow-lg">Découvrez l'histoire, la culture et la beauté du Togo</p>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <h2 class="text-3xl font-bold text-center text-togo-green mb-12">Explorez notre site</h2>
+        
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <!-- Histoire -->
+            <div class="section-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-togo-green flex items-center justify-center">
+                    <svg class="h-24 w-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-togo-green mb-2">Histoire</h3>
+                    <p class="text-gray-700 mb-4">Découvrez les événements clés et les personnages qui ont façonné l'histoire du Togo.</p>
+                    <a href="histoire.html" class="inline-block bg-togo-yellow text-togo-green font-bold py-2 px-4 rounded hover:bg-togo-green hover:text-togo-yellow transition duration-300">Explorer</a>
+                </div>
+            </div>
+
+            <!-- Événements -->
+            <div class="section-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-togo-yellow flex items-center justify-center">
+                    <svg class="h-24 w-24 text-togo-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-togo-yellow mb-2">Événements</h3>
+                    <p class="text-gray-700 mb-4">Articles sur la culture togolaise : cuisine, musique, danse et art.</p>
+                    <a href="evenements.html" class="inline-block bg-togo-green text-togo-yellow font-bold py-2 px-4 rounded hover:bg-togo-yellow hover:text-togo-green transition duration-300">Explorer</a>
+                </div>
+            </div>
+
+            <!-- Partage -->
+            <div class="section-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-togo-white flex items-center justify-center border-t-4 border-b-4 border-togo-red">
+                    <svg class="h-24 w-24 text-togo-red" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8h2a2 2 0 012 2v6a2 2 0 01-2 2h-2v4l-4-4H9a1.994 1.994 0 01-1.414-.586m0 0L11 14h4a2 2 0 002-2V6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2v4l.586-.586z"></path>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-togo-red mb-2">Partage</h3>
+                    <p class="text-gray-700 mb-4">Forum pour que les Togolais partagent leurs souvenirs et réflexions.</p>
+                    <a href="partage.html" class="inline-block bg-togo-red text-white font-bold py-2 px-4 rounded hover:bg-togo-white hover:text-togo-red hover:border hover:border-togo-red transition duration-300">Explorer</a>
+                </div>
+            </div>
+
+            <!-- Éducation -->
+            <div class="section-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                <div class="h-48 bg-togo-red flex items-center justify-center">
+                    <svg class="h-24 w-24 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 14l9-5-9-5-9 5 9 5z"></path>
+                        <path d="M12 14l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14z"></path>
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 14l9-5-9-5-9 5 9 5zm0 0l6.16-3.422a12.083 12.083 0 01.665 6.479A11.952 11.952 0 0012 20.055a11.952 11.952 0 00-6.824-2.998 12.078 12.078 0 01.665-6.479L12 14zm-4 6v-7.5l4-2.222"></path>
+                    </svg>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-2xl font-bold text-togo-red mb-2">Éducation</h3>
+                    <p class="text-gray-700 mb-4">Ressources sur l'histoire et la culture du Togo pour les écoles et les étudiants.</p>
+                    <a href="education.html" class="inline-block bg-togo-red text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-togo-red hover:border hover:border-togo-red transition duration-300">Explorer</a>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-togo-green text-white py-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Racines Togolaises</h3>
+                    <p class="mb-4 max-w-md">Un site dédié à l'histoire, la culture et le patrimoine du Togo, célébrant notre passé et construisant notre avenir.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-togo-yellow">Liens rapides</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="hover:text-togo-yellow transition duration-300">Accueil</a></li>
+                            <li><a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a></li>
+                            <li><a href="evenements.html" class="hover:text-togo-yellow transition duration-300">Événements</a></li>
+                            <li><a href="partage.html" class="hover:text-togo-yellow transition duration-300">Partage</a></li>
+                            <li><a href="education.html" class="hover:text-togo-yellow transition duration-300">Éducation</a></li>
+                            <li><a href="gouv.html" class="hover:text-togo-yellow transition duration-300">gouvernement</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-togo-yellow">Contact</h4>
+                        <ul class="space-y-2">
+                            <li>Email: contact@togoracines.tg</li>
+                            <li>Téléphone: +228 93 39 19 49</li>
+                            <li>Lomé, Togo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-togo-yellow mt-8 pt-6 text-center">
+                <p>&copy; 2025 Racines Togolaises. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>

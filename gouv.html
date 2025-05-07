@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Racines Togolaises - Gouvernement</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              "togo-green": "#006b3f",
+              "togo-yellow": "#ffce00",
+              "togo-red": "#d21034",
+              "togo-white": "#ffffff",
+            },
+          },
+        },
+      };
+    </script>
+  </head>
+  <body class="bg-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-togo-green text-white shadow-lg">
+      <div class="container mx-auto px-4">
+        <div class="flex items-center justify-between py-4">
+          <div class="flex items-center">
+            <span class="text-2xl font-bold">Racines Togolaises</span>
+          </div>
+          <div class="hidden md:flex items-center space-x-8">
+            <a
+              href="index.html"
+              class="hover:text-togo-yellow transition duration-300"
+              >Accueil</a
+            >
+            <a
+              href="histoire.html"
+              class="hover:text-togo-yellow transition duration-300"
+              >Histoire</a
+            >
+            <a
+              href="evenements.html"
+              class="hover:text-togo-yellow transition duration-300"
+              >Événements</a
+            >
+            <a
+              href="partage.html"
+              class="hover:text-togo-yellow transition duration-300"
+              >Partage</a
+            >
+            <a
+              href="education.html"
+              class="hover:text-togo-yellow transition duration-300"
+              >Éducation</a
+            >
+            <a
+              href="gouv.html"
+              class="py-2 px-3 bg-togo-yellow text-togo-green rounded-md font-medium"
+              >Gouvernement</a
+            >
+          </div>
+          <div class="md:hidden flex items-center">
+            <button id="menu-toggle" class="focus:outline-none">
+              <svg
+                class="h-6 w-6"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M4 6h16M4 12h16M4 18h16"
+                ></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+        <div id="mobile-menu" class="md:hidden hidden">
+          <div class="flex flex-col space-y-4 py-4">
+            <a
+              href="index.html"
+              class="hover:text-togo-yellow transition duration-300"
+              >Accueil</a
+            >
+            <a
+              href="histoire.html"
+              class="hover:text-togo-yellow transition duration-300"
+              >Histoire</a
+            >
+            <a
+              href="evenements.html"
+              class="hover:text-togo-yellow transition duration-300"
+              >Événements</a
+            >
+            <a
+              href="partage.html"
+              class="hover:text-togo-yellow transition duration-300"
+              >Partage</a
+            >
+            <a
+              href="education.html"
+              class="hover:text-togo-yellow transition duration-300"
+              >Éducation</a
+            >
+            <a
+              href="gouv.html"
+              class="py-2 px-3 bg-togo-yellow text-togo-green rounded-md font-medium"
+              >Gouvernement</a
+            >
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+      <!-- Section Président -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-center text-togo-green mb-8">
+          Le Président de la République
+        </h2>
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <div class="flex flex-col md:flex-row gap-8">
+            <div class="md:w-1/3">
+              
+              <img
+                src="https://upload.wikimedia.org/wikipedia/commons/a/aa/Fumio_Kishida_and_Faure_Gnassingb%C3%A9_before_the_funeral_of_Shinzo_Abe_%281%29_%28cropped%29.jpg"
+                alt="Président Faure Essozimna Gnassingbé"
+                class="w-full h-auto rounded-lg shadow-md"
+              />
+              <p class="text-sm text-gray-500 mt-2 text-center">
+                © Présidence de la République du Togo
+              </p>
+            </div>
+            <div class="md:w-2/3">
+              <h3 class="text-2xl font-bold text-togo-green mb-4">
+                S.E.M Faure Essozimna Gnassingbé
+              </h3>
+              <p class="text-gray-700 mb-4">
+                Président de la République Togolaise depuis 2005
+              </p>
+              <div class="prose max-w-none text-gray-600">
+                <p>
+                  Né le 6 juin 1966 à Afagnan, est un homme d'État togolais,
+                  président de la République depuis 2005. D'abord président par
+                  intérim (du 7 au 25 février 2005), il est ensuite élu à quatre
+                  reprises, dans des conditions contestées. Il succède à son
+                  père, Gnassingbé Eyadema, président de la République de 1967
+                  jusqu'à sa mort en 2005.
+                </p>
+
+                <p class="mt-4">
+                  Sa nomination en tant que président de la République était
+                  déjà prévue, en raison du mauvais état de santé de son père.
+                  En décembre 2002, Gnassingbé Eyadema avait fait amender la
+                  Constitution du pays, avec entre autres mesures l’abaissement
+                  de l'âge nécessaire pour être président de 45 à 35 ans, âge
+                  qu'avait son fils à cette époque. Ceci aurait permis à Faure
+                  Gnassingbé de se présenter à l’élection présidentielle de 2003
+                  au cas où Eyadéma ne pourrait se présenter.
+                </p>
+                <p>
+                  À la suite du décès de son père le 5 février 2005 et d'un coup
+                  d'État constitutionnel soutenu par l'armée, Faure Gnassingbé
+                  devient président[2] après avoir été élu président de
+                  l'Assemblée nationale[3]. Sous la pression de l'opposition, de
+                  l'Union africaine et de la communauté internationale, Faure
+                  Gnassingbé renonce d'abord à être président jusqu'au terme du
+                  mandat normal de son père en renonçant à la modification de la
+                  constitution votée en toute hâte. Il annonce alors une
+                  élection dans les 60 jours. Ensuite, le 25 février, il renonce
+                  à son mandat de président par intérim[4] et se porte candidat
+                  à l'élection présidentielle.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Hymne National -->
+      <section class="mb-16">
+        <h2 class="text-3xl font-bold text-center text-togo-green mb-8">
+          Hymne National
+        </h2>
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-2xl font-bold text-togo-red mb-4"  style="text-align: center;">
+            Terre de nos aïeux
+          </h3>
+          <div class="prose max-w-none text-gray-600" style="text-align: center;">
+            <h4 class="font-bold text-togo-green">Premier couplet</h4>
+            <p class="mb-4">
+                Salut à toi pays de nos aïeux,<br>
+                Toi qui les rendait forts,<br>
+                Paisibles et joyeux,<br>
+                Cultivant vertu, vaillance,<br>
+                Pour la postérité<br>
+                Que viennent les tyrans,<br>
+                Ton cœur soupire vers la liberté,<br>
+                Togo debout, luttons sans défaillance,<br>
+                Vainquons ou mourons, mais dans la dignité,<br>
+                Grand Dieu, toi seul nous a exaltés,<br>
+                Du Togo pour la prospérité,<br>
+                Togolais viens, bâtissons la cité.
+                </p>
+                
+
+            <h4 class="font-bold text-togo-green">Deuxième couplet</h4>
+            <p class="mb-4">
+                Dans l'unité nous voulons te servir,<br>
+                C'est bien là de nos cœurs, le plus ardent désir,<br>
+                Clamons fort notre devise,<br>
+                Que rien ne peut ternir.<br>
+                Seul artisan de ton bonheur, ainsi que de ton avenir,<br>
+                Brisons partout les chaînes de la traîtrise,<br>
+                Et nous te jurons toujours fidélité,<br>
+                Et aimer servir, se dépasser,<br>
+                Faire encore de toi sans nous lasser,<br>
+                Togo chéri, l'or de l'humanité.
+            </p>
+
+            <h4 class="font-bold text-togo-green">Troisième couplet</h4>
+            <p class="mb-4">
+                Salut, Salut à l'Univers entier<br>
+                Unissons nos efforts sur l'immense chantier<br>
+                D'où naîtra toute nouvelle<br>
+                La Grande Humanité<br>
+                Partout au lieu de la misère, apportons la félicité.<br>
+                Chassons du monde la haine rebelle<br>
+                Finis l'esclavage et la Captivité<br><br>
+                
+                À l'étoile de la liberté,<br>
+                Renouons la solidarité<br>
+                Des Nations dans la fraternité.
+            </p>
+
+            <h4 class="font-bold text-togo-green mt-6">Devise nationale</h4>
+            <p class="text-xl font-semibold text-togo-red">
+              "Travail - Liberté - Patrie"
+            </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- Gouvernement -->
+      <!-- Section Gouvernement  -->
+      <section>
+        <h2 class="text-3xl font-bold text-center text-togo-green mb-8">
+          Le Gouvernement
+        </h2>
+
+        <!-- Première Ministre -->
+        <div class="bg-white rounded-lg shadow-lg p-8 mb-12">
+          <div class="flex flex-col items-center max-w-lg mx-auto">
+            
+            <img
+              src="https://www.republiquetogolaise.com/media/k2/items/cache/41109a8ebcc50c83fa43c34782118bdd_L.jpg"
+              alt="Victoire Tomégah Dogbé"
+              class="w-64 h-64 object-cover rounded-full shadow-lg mb-4"
+            />
+            <h3 class="text-2xl font-bold text-togo-green">
+              Victoire Tomégah Dogbé
+            </h3>
+            <p class="text-xl text-gray-700">Première Ministre</p>
+          </div>
+        </div>
+
+        <!-- Membres du gouvernement -->
+        <div class="bg-white rounded-lg shadow-lg p-8">
+          <h3 class="text-2xl font-bold text-center text-togo-green mb-8">
+            Membres du Gouvernement
+          </h3>
+
+          <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
+            <!-- Ministre 1 -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="relative w-48 h-48 mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/91/Robert_Dussey%2C_Minister_of_Foreign_Affairs_%26_Cooperation%2C_Togo%2C_on_SDGs_%2842112285541%29.jpg/330px-Robert_Dussey%2C_Minister_of_Foreign_Affairs_%26_Cooperation%2C_Togo%2C_on_SDGs_%2842112285541%29.jpg"
+                  alt="Nom du Ministre"
+                  class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <h4 class="font-bold text-togo-green">M. Robert DUSSEY</h4>
+              <p class="text-sm text-gray-600">
+                Ministre des Affaires Étrangères
+              </p>
+            </div>
+
+            <!-- Ministre 2 -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="relative w-48 h-48 mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="https://www.togofirst.com/media/k2/items/cache/6ce669b9ad56f3e37e5ebf4a910230f1_L.jpg"
+                  alt="Nom du Ministre"
+                  class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <h4 class="font-bold text-togo-green">M. Mipamb Nahm-Tchougli</h4>
+              <p class="text-sm text-gray-600">Ministre de la Justice</p>
+            </div>
+
+            <!-- Ministre 3 -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="relative w-48 h-48 mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="https://yop.l-frii.com/wp-content/uploads/2024/08/Zourehatou-KASSAH-TRAORE-1024x689.jpg"
+                  alt="Nom du Ministre"
+                  class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <h4 class="font-bold text-togo-green">Mme Zourehatou KASSAH-TRAORÉ</h4>
+              <p class="text-sm text-gray-600">Ministre des Travaux publics</p>
+            </div>
+
+            <!-- Ministre 4 -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="relative w-48 h-48 mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="https://www.togofirst.com/media/k2/items/cache/21431b4a4a3ecc46a2245d81c7140e3b_L.jpg"
+                  alt="Nom du Ministre"
+                  class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <h4 class="font-bold text-togo-green">M. Essowè Georges BARCOLA</h4>
+              <p class="text-sm text-gray-600">Ministre de l'Économie</p>
+            </div>
+
+            <!-- Ministre 5 -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="relative w-48 h-48 mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="https://edunews.tg/info/wp-content/uploads/2022/08/download-1-16.jpg"
+                  alt="Nom du Ministre"
+                  class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <h4 class="font-bold text-togo-green">M. Piyabalo NABEDE</h4>
+              <p class="text-sm text-gray-600">Ministre de l'Éducation</p>
+            </div>
+
+            <!-- Ministre 6 -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="relative w-48 h-48 mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="https://www.brazzavillefoundation.org/app/uploads/elementor/thumbs/20240828-MM-qt9q3pjuoboaeohqkncydf741tvblemxf7qarzp0ps.jpg"
+                  alt="Nom du Ministre"
+                  class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <h4 class="font-bold text-togo-green">Prof. Moustafa Mijiyawa</h4>
+              <p class="text-sm text-gray-600">Ministre de la Santé</p>
+            </div>
+
+            <!-- Ministre 7 -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="relative w-48 h-48 mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="https://www.republicoftogo.com/var/site/storage/images/toutes-les-rubriques-novo/politique/atcha-dedji-affoh-rejoint-l-equipe-gouvernementale/2096863-1-fre-FR/atcha-dedji-affoh-rejoint-l-equipe-gouvernementale_i1920.jpg"
+                  alt="Nom du Ministre"
+                  class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <h4 class="font-bold text-togo-green">M. 	Affoh Atcha-Dédji</h4>
+              <p class="text-sm text-gray-600">Ministre des Transports</p>
+            </div>
+
+            <!-- Ministre 8 -->
+            <div class="flex flex-col items-center text-center group">
+              <div class="relative w-48 h-48 mb-4 overflow-hidden rounded-lg">
+                <img
+                  src="https://manationtogo.com/wp-content/uploads/elementor/thumbs/Antoine-L%C3%A9kpa-Gb%C3%A9gb%C3%A9ni-bon-nmjk9jq00sub6uhhpzjj734p5avm9a87c5ese7ek5k.jpg"
+                  alt="Nom du Ministre"
+                  class="w-full h-full object-cover transform transition-transform duration-300 group-hover:scale-110"
+                />
+              </div>
+              <h4 class="font-bold text-togo-green">M. Antoine Lékpa Gbegbeni</h4>
+              <p class="text-sm text-gray-600">Ministre de l'Agriculture</p>
+            </div>
+
+            <!-- Ajoutez d'autres ministres de la même manière -->
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-togo-green text-white py-8 mt-16">
+      <div class="container mx-auto px-4">
+        <div class="flex flex-col md:flex-row justify-between">
+          <div class="mb-6 md:mb-0">
+            <h3 class="text-xl font-bold mb-4">Racines Togolaises</h3>
+            <p class="mb-4 max-w-md">
+              Un site dédié à l'histoire, la culture et le patrimoine du Togo,
+              célébrant notre passé et construisant notre avenir.
+            </p>
+          </div>
+          <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-togo-yellow">
+                Liens rapides
+              </h4>
+              <ul class="space-y-2">
+                <li>
+                  <a
+                    href="index.html"
+                    class="hover:text-togo-yellow transition duration-300"
+                    >Accueil</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="histoire.html"
+                    class="hover:text-togo-yellow transition duration-300"
+                    >Histoire</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="evenements.html"
+                    class="hover:text-togo-yellow transition duration-300"
+                    >Événements</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="partage.html"
+                    class="hover:text-togo-yellow transition duration-300"
+                    >Partage</a
+                  >
+                </li>
+                <li>
+                  <a
+                    href="education.html"
+                    class="hover:text-togo-yellow transition duration-300"
+                    >Éducation</a
+                  >
+                </li>
+              </ul>
+            </div>
+            <div>
+              <h4 class="text-lg font-semibold mb-3 text-togo-yellow">
+                Contact
+              </h4>
+              <ul class="space-y-2">
+                <li>Email: contact@togoracines.tg</li>
+                <li>Téléphone: +228 93 39 19 49</li>
+                <li>Lomé, Togo</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="border-t border-togo-yellow mt-8 pt-6 text-center">
+          <p>&copy; 2025 Racines Togolaises. Tous droits réservés.</p>
+        </div>
+      </div>
+    </footer>
+
+    <script>
+      // Mobile menu toggle
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          const mobileMenu = document.getElementById("mobile-menu");
+          mobileMenu.classList.toggle("hidden");
+        });
+    </script>
+  </body>
+</html>

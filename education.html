@@ -1,0 +1,659 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ressources Éducatives - Racines Togolaises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'togo-green': '#006b3f',
+                        'togo-yellow': '#ffce00',
+                        'togo-red': '#d21034',
+                        'togo-white': '#ffffff'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .resource-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        .quiz-option:hover {
+            background-color: #f3f4f6;
+        }
+        .quiz-option.selected {
+            background-color: #006b3f;
+            color: white;
+        }
+        .quiz-option.correct {
+            background-color: #10b981;
+            color: white;
+        }
+        .quiz-option.incorrect {
+            background-color: #ef4444;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-togo-green text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold">Racines Togolaises</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-togo-yellow transition duration-300">Accueil</a>
+                    <a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a>
+                    <a href="evenements.html" class="hover:text-togo-yellow transition duration-300">Événements</a>
+                    <a href="partage.html" class="hover:text-togo-yellow transition duration-300">Partage</a>
+                    <a href="education.html" class="py-2 px-3 bg-togo-yellow text-togo-green rounded-md font-medium">Éducation</a>
+                    <a href="gouv.html" class="hover:text-togo-yellow transition duration-300">Gouv</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="flex flex-col space-y-4 py-4">
+                    <a href="index.html" class="hover:text-togo-yellow transition duration-300">Accueil</a>
+                    <a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a>
+                    <a href="evenements.html" class="hover:text-togo-yellow transition duration-300">Événements</a>
+                    <a href="partage.html" class="hover:text-togo-yellow transition duration-300">Partage</a>
+                    <a href="education.html" class="py-2 px-3 bg-togo-yellow text-togo-green rounded-md font-medium">Éducation</a>
+                    <a href="gouv.html" class="hover:text-togo-yellow transition duration-300">Gouv</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="bg-togo-red py-12 mb-10">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-white">Ressources Éducatives</h1>
+            <p class="text-xl text-white max-w-2xl mx-auto">Découvrez et apprenez sur l'histoire et la culture du Togo grâce à nos ressources pédagogiques</p>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            
+            <div class="lg:col-span-2 space-y-8">
+                <h2 class="text-3xl font-bold text-togo-green mb-6">Ressources pour les écoles et étudiants</h2>
+                
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- card 1 -->
+                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                        <div class="h-40 bg-togo-green flex items-center justify-center text-white">
+                            <svg class="h-16 w-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 6.253v13m0-13C10.832 5.477 9.246 5 7.5 5S4.168 5.477 3 6.253v13C4.168 18.477 5.754 18 7.5 18s3.332.477 4.5 1.253m0-13C13.168 5.477 14.754 5 16.5 5c1.747 0 3.332.477 4.5 1.253v13C19.832 18.477 18.247 18 16.5 18c-1.746 0-3.332.477-4.5 1.253"></path>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-togo-green mb-2">Histoire du Togo pour les enfants</h3>
+                            <p class="text-gray-700 mb-4">Un guide illustré adapté aux enfants de 8 à 12 ans, présentant les grandes étapes de l'histoire togolaise.</p>
+                            <a href="https://horizon.documentation.ird.fr/exl-doc/pleins_textes/divers17-09/010010905.pdf" class="inline-block bg-togo-green text-white px-4 py-2 rounded hover:bg-togo-yellow hover:text-togo-green transition duration-300">Télécharger (PDF)</a>
+                        </div>
+                    </div>
+                    
+                    <!--card 2 -->
+                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                        <div class="h-40 bg-togo-yellow flex items-center justify-center text-togo-green">
+                            <svg class="h-16 w-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-togo-green mb-2">Fiches pédagogiques pour enseignants</h3>
+                            <p class="text-gray-700 mb-4">Collection de fiches pédagogiques pour aider les enseignants à présenter l'histoire et la culture togolaises en classe.</p>
+                            <a href="https://fr.scribd.com/search?query=togo" class="inline-block bg-togo-yellow text-togo-green px-4 py-2 rounded hover:bg-togo-green hover:text-togo-yellow transition duration-300">Consulter</a>
+                        </div>
+                    </div>
+                    
+                    <!-- card 3-->
+                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                        <div class="h-40 bg-togo-red flex items-center justify-center text-white">
+                            <svg class="h-16 w-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 4v16M17 4v16M3 8h4m10 0h4M3 12h18M3 16h4m10 0h4M4 20h16a1 1 0 001-1V5a1 1 0 00-1-1H4a1 1 0 00-1 1v14a1 1 0 001 1z"></path>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-togo-green mb-2">Vidéos documentaires</h3>
+                            <p class="text-gray-700 mb-4">Série de vidéos documentaires sur différents aspects de l'histoire, la géographie et la culture du Togo.</p>
+                            <a href="https://www.youtube.com/results?search_query=videos+documentaires+du+togo" class="inline-block bg-togo-red text-white px-4 py-2 rounded hover:bg-white hover:text-togo-red hover:border hover:border-togo-red transition duration-300">Voir les vidéos</a>
+                        </div>
+                    </div>
+                    
+                    <!--card 4-->
+                    <div class="resource-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300">
+                        <div class="h-40 bg-togo-white border-t-4 border-b-4 border-togo-green flex items-center justify-center text-togo-green">
+                            <svg class="h-16 w-16" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2"></path>
+                            </svg>
+                        </div>
+                        <div class="p-6">
+                            <h3 class="text-xl font-bold text-togo-green mb-2">Présentations interactives</h3>
+                            <p class="text-gray-700 mb-4">Présentations interactives sur la géographie, les ethnies et les traditions togolaises.</p>
+                            <a href="https://fr.wikipedia.org/wiki/Culture_du_Togo" class="inline-block bg-togo-white text-togo-green px-4 py-2 rounded border border-togo-green hover:bg-togo-green hover:text-white transition duration-300">Explorer</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Quiz section -->
+                <div class="bg-white p-6 rounded-lg shadow-md mt-12">
+                    <h2 class="text-2xl font-bold text-togo-green mb-6">Quiz sur le Togo</h2>
+                    
+                    <div id="quiz-container">
+                        <div class="quiz-question mb-8">
+                            <h3 class="text-lg font-semibold mb-3">1. Quelle est la date d'indépendance du Togo?</h3>
+                            <div class="space-y-2">
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    a) 1er août 1960
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="true">
+                                    b) 27 avril 1960
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    c) 5 mai 1960
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    d) 3 octobre 1960
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-question mb-8 hidden">
+                            <h3 class="text-lg font-semibold mb-3">2. Quelle est la capitale du Togo?</h3>
+                            <div class="space-y-2">
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="true">
+                                    a) Lomé
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    b) Kara
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    c) Sokodé
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    d) Atakpamé
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-question mb-8 hidden">
+                            <h3 class="text-lg font-semibold mb-3">3. Quel est le plus haut sommet du Togo?</h3>
+                            <div class="space-y-2">
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    a) Mont Agou
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="true">
+                                    b) Mont Agou
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    c) Mont Kabyè
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    d) Mont Togo
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-question mb-8 hidden">
+                            <h3 class="text-lg font-semibold mb-3">4. Quelle est la langue officielle du Togo?</h3>
+                            <div class="space-y-2">
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    a) Anglais
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    b) Ewe
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="true">
+                                    c) Français
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    d) Kabyè
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="quiz-question mb-8 hidden">
+                            <h3 class="text-lg font-semibold mb-3">5. Qui a été le premier président du Togo indépendant?</h3>
+                            <div class="space-y-2">
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="true">
+                                    a) Sylvanus Olympio
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    b) Nicolas Grunitzky
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    c) Gnassingbé Eyadéma
+                                </div>
+                                <div class="quiz-option p-3 border rounded cursor-pointer" data-correct="false">
+                                    d) Faure Gnassingbé
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div id="quiz-result" class="p-4 rounded hidden">
+                            <h3 class="text-xl font-bold mb-2">Résultat du quiz</h3>
+                            <p>Vous avez obtenu <span id="score">0</span>/5 bonnes réponses!</p>
+                            <button id="restart-quiz" class="mt-4 bg-togo-green text-white px-4 py-2 rounded hover:bg-togo-yellow hover:text-togo-green transition duration-300">Recommencer le quiz</button>
+                        </div>
+                        
+                        <div class="quiz-navigation flex justify-between mt-4">
+                            <button id="prev-question" class="bg-gray-200 text-gray-700 px-4 py-2 rounded hover:bg-gray-300 transition duration-300 disabled:opacity-50 disabled:cursor-not-allowed" disabled>Question précédente</button>
+                            <button id="next-question" class="bg-togo-green text-white px-4 py-2 rounded hover:bg-togo-yellow hover:text-togo-green transition duration-300">Question suivante</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Glossaire culturel -->
+                <div class="bg-white p-6 rounded-lg shadow-md mt-12">
+                    <h2 class="text-2xl font-bold text-togo-green mb-6">Glossaire culturel togolais</h2>
+                    
+                    <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                        <div>
+                            <h3 class="text-lg font-semibold text-togo-red mb-3">Ethnies et langues</h3>
+                            <ul class="space-y-3">
+                                <li class="p-2 border-b">
+                                    <span class="font-medium">Ewe</span> - Principale ethnie du sud du Togo dont la langue est également appelée Ewe
+                                </li>
+                                <li class="p-2 border-b">
+                                    <span class="font-medium">Kabyè</span> - Ethnie originaire du nord du Togo, connue pour ses traditions agricoles
+                                </li>
+                                <li class="p-2 border-b">
+                                    <span class="font-medium">Mina</span> - Groupe ethnique résidant principalement le long de la côte
+                                </li>
+                                <li class="p-2">
+                                    <span class="font-medium">Tem</span> - Aussi appelés Kotokoli, principalement dans la région centrale
+                                </li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3 class="text-lg font-semibold text-togo-red mb-3">Traditions et fêtes</h3>
+                            <ul class="space-y-3">
+                                <li class="p-2 border-b">
+                                    <span class="font-medium">Evala</span> - Rite d'initiation et lutte traditionnelle chez les Kabyè
+                                </li>
+                                <li class="p-2 border-b">
+                                    <span class="font-medium">Akpema</span> - Rite d'initiation des jeunes filles kabyè
+                                </li>
+                                <li class="p-2 border-b">
+                                    <span class="font-medium">Gadao</span> - Danse traditionnelle ewe accompagnée de tambours
+                                </li>
+                                <li class="p-2">
+                                    <span class="font-medium">Vaudou</span> - Pratique religieuse traditionnelle répandue dans le sud du Togo
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="lg:col-span-1 space-y-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-togo-green mb-4">Autres ressources</h3>
+                    <ul class="space-y-3">
+                        <li class="flex items-center space-x-3">
+                            <svg class="h-5 w-5 text-togo-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <a href="https://le-cartographe.net/dossiers-carto-91/afrique/368-carte-du-togo" class="text-togo-green hover:underline">Cartes géographiques du Togo</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="h-5 w-5 text-togo-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <a href="https://www.karthala.com/accueil/2445-histoire-des-togolais-des-origines-aux-annees-1960-tome-1-9782811104801.html" class="text-togo-green hover:underline">Bibliographie sur l'histoire togolaise</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="h-5 w-5 text-togo-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <a href="https://www.tripadvisor.fr/Attractions-g293838-Activities-c49-Togo.html" class="text-togo-green hover:underline">Guide des musées togolais</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="h-5 w-5 text-togo-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <a href="https://fr.wikipedia.org/wiki/Cuisine_togolaise" class="text-togo-green hover:underline">Traditions culinaires du Togo</a>
+                        </li>
+                        <li class="flex items-center space-x-3">
+                            <svg class="h-5 w-5 text-togo-green" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z"></path>
+                            </svg>
+                            <a href="https://devbase.gouv.tg/wp-content/uploads/2018/12/SECTEUR-DE-LARTISANAT-VF.pdf" class="text-togo-green hover:underline">Artisanat traditionnel togolais</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <!-- Calendirer des Evènements culturels -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-togo-green mb-4">Calendrier des événements culturels</h3>
+                    <div class="space-y-4">
+                        <div class="p-3 border-l-4 border-togo-yellow bg-yellow-50">
+                            <span class="text-sm text-gray-500">Avril</span>
+                            <h4 class="font-semibold">Célébration de l'indépendance</h4>
+                            <p class="text-sm">27 avril - Tout le pays</p>
+                        </div>
+                        <div class="p-3 border-l-4 border-togo-green bg-green-50">
+                            <span class="text-sm text-gray-500">Juillet-Août</span>
+                            <h4 class="font-semibold">Festival Evala</h4>
+                            <p class="text-sm">Kara - Région de la Kara</p>
+                        </div>
+                        <div class="p-3 border-l-4 border-togo-red bg-red-50">
+                            <span class="text-sm text-gray-500">Septembre</span>
+                            <h4 class="font-semibold">Festival des Arts et de la Culture</h4>
+                            <p class="text-sm">Lomé</p>
+                        </div>
+                        <div class="p-3 border-l-4 border-gray-400 bg-gray-50">
+                            <span class="text-sm text-gray-500">Novembre</span>
+                            <h4 class="font-semibold">Fête traditionnelle Agbogbo-Za</h4>
+                            <p class="text-sm">Notsé</p>
+                        </div>
+                    </div>
+                    <a href="#" class="block text-center mt-4 text-togo-green hover:underline">Voir tous les événements</a>
+                </div>
+
+                <!-- Contact IMPORTANts -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-togo-green mb-4">Contacts utiles</h3>
+                    <ul class="space-y-3">
+                        <li class="p-2 border-b">
+                            <span class="font-medium block">Musée National du Togo</span>
+                            <span class="text-sm text-gray-600">Lomé - +228 22 21 71 40</span>
+                        </li>
+                        <li class="p-2 border-b">
+                            <span class="font-medium block">Bibliothèque Nationale</span>
+                            <span class="text-sm text-gray-600">Lomé - +228 22 21 04 10</span>
+                        </li>
+                        <li class="p-2 border-b">
+                            <span class="font-medium block">Centre Culturel Français</span>
+                            <span class="text-sm text-gray-600">Lomé - +228 22 53 58 00</span>
+                        </li>
+                        <li class="p-2">
+                            <span class="font-medium block">Université de Lomé</span>
+                            <span class="text-sm text-gray-600">Faculté des Lettres et Sciences Humaines</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <!-- Dictionnaire des langues togolaises -->
+        <div class="mt-12 bg-white p-6 rounded-lg shadow-md">
+            <h2 class="text-3xl font-bold text-togo-green mb-6">Dictionnaire des expressions togolaises</h2>
+            <p class="mb-6">Découvrez quelques expressions et mots courants dans les principales langues du Togo.</p>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white">
+                    <thead class="bg-togo-green text-white">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Français</th>
+                            <th class="py-3 px-4 text-left">Ewe</th>
+                            <th class="py-3 px-4 text-left">Kabyè</th>
+                            <th class="py-3 px-4 text-left">Mina</th>
+                        </tr>
+                    </thead>
+                    <tbody class="divide-y">
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">Bonjour</td>
+                            <td class="py-3 px-4">Ndi</td>
+                            <td class="py-3 px-4">Maloo</td>
+                            <td class="py-3 px-4">Ndi</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">Merci</td>
+                            <td class="py-3 px-4">Akpe</td>
+                            <td class="py-3 px-4">Paadem</td>
+                            <td class="py-3 px-4">Akpe</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">Au revoir</td>
+                            <td class="py-3 px-4">Hezon</td>
+                            <td class="py-3 px-4">Wari</td>
+                            <td class="py-3 px-4">Hezo</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">Comment vas-tu?</td>
+                            <td class="py-3 px-4">Efon a?</td>
+                            <td class="py-3 px-4">Alafia?</td>
+                            <td class="py-3 px-4">Efona?</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">Je vais bien</td>
+                            <td class="py-3 px-4">Mefon</td>
+                            <td class="py-3 px-4">Maloo yagni</td>
+                            <td class="py-3 px-4">Mefon</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+            <div class="mt-4 text-center">
+                <a href="https://api.pageplace.de/preview/DT0400.9782336395968_A49342378/preview-9782336395968_A49342378.pdf" class="inline-block bg-togo-green text-white px-4 py-2 rounded hover:bg-togo-yellow hover:text-togo-green transition duration-300">Télécharger le dictionnaire complet (PDF)</a>
+            </div>
+        </div>
+    </main>
+
+    <!-- Newsletter -->
+    <section class="bg-togo-yellow py-12 mt-16">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-togo-green mb-4">Restez informés</h2>
+            <p class="text-togo-green max-w-2xl mx-auto mb-6">Abonnez-vous à notre newsletter pour recevoir régulièrement des ressources éducatives sur le Togo</p>
+            
+            <form class="max-w-md mx-auto">
+                <div class="flex flex-col sm:flex-row gap-2">
+                    <input type="email" placeholder="Votre adresse email" class="flex-grow px-4 py-2 rounded-md border focus:outline-none focus:ring-2 focus:ring-togo-green">
+                    <button type="submit" class="bg-togo-green text-white px-6 py-2 rounded-md hover:bg-togo-red transition duration-300">S'abonner</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-togo-green text-white py-8">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-8">
+                <div>
+                    <h3 class="text-xl font-bold mb-4">Racines Togolaises</h3>
+                    <p class="text-sm">Préserver et partager la riche histoire et culture du Togo.</p>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Liens rapides</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="index.html" class="hover:text-togo-yellow transition duration-300">Accueil</a></li>
+                        <li><a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a></li>
+                        <li><a href="evenements.html" class="hover:text-togo-yellow transition duration-300">Événements</a></li>
+                        <li><a href="partage.html" class="hover:text-togo-yellow transition duration-300">Partage</a></li>
+                        <li><a href="education.html" class="hover:text-togo-yellow transition duration-300">Éducation</a></li>
+                        <li><a href="gouv.html" class="hover:text-togo-yellow transition duration-300">gouvernement</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Ressources</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li><a href="#" class="hover:text-togo-yellow transition duration-300">Bibliothèque</a></li>
+                        <li><a href="#" class="hover:text-togo-yellow transition duration-300">Galerie photos</a></li>
+                        <li><a href="#" class="hover:text-togo-yellow transition duration-300">Vidéothèque</a></li>
+                        <li><a href="#" class="hover:text-togo-yellow transition duration-300">Témoignages</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h4 class="text-lg font-semibold mb-3">Contact</h4>
+                    <ul class="space-y-2 text-sm">
+                        <li>Email: contact@togoracines.org</li>
+                        <li>Téléphone: +228 93 39 19 49</li>
+                        <li>Adresse: Lomé, Togo</li>
+                    </ul>
+                    <div class="flex space-x-4 mt-4">
+                        <a href="#" class="hover:text-togo-yellow transition duration-300">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M22 12c0-5.523-4.477-10-10-10S2 6.477 2 12c0 4.991 3.657 9.128 8.438 9.878v-6.987h-2.54V12h2.54V9.797c0-2.506 1.492-3.89 3.777-3.89 1.094 0 2.238.195 2.238.195v2.46h-1.26c-1.243 0-1.63.771-1.63 1.562V12h2.773l-.443 2.89h-2.33v6.988C18.343 21.128 22 16.991 22 12z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="hover:text-togo-yellow transition duration-300">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2C6.486 2 2 6.486 2 12s4.486 10 10 10 10-4.486 10-10S17.514 2 12 2zm4.43 14.43c-.081.087-.188.131-.294.131-.1 0-.2-.038-.278-.115l-2.708-2.708-3.15 2.01c-.06.039-.128.058-.196.058-.036 0-.073-.009-.11-.026a.3.3 0 01-.187-.283v-8.994a.3.3 0 01.187-.283c.103-.051.227-.043.321.023l6 3.994a.3.3 0 01.001.501l-2.379 1.585 2.687 2.687a.332.332 0 01.006.468z"></path>
+                            </svg>
+                        </a>
+                        <a href="#" class="hover:text-togo-yellow transition duration-300">
+                            <svg class="h-6 w-6" fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12.315 2c2.43 0 2.784.013 3.808.06 1.064.049 1.791.218 2.427.465a4.902 4.902 0 011.772 1.153 4.902 4.902 0 011.153 1.772c.247.636.416 1.363.465 2.427.048 1.067.06 1.407.06 4.123v.08c0 2.643-.012 2.987-.06 4.043-.049 1.064-.218 1.791-.465 2.427a4.902 4.902 0 01-1.153 1.772 4.902 4.902 0 01-1.772 1.153c-.636.247-1.363.416-2.427.465-1.067.048-1.407.06-4.123.06h-.08c-2.643 0-2.987-.012-4.043-.06-1.064-.049-1.791-.218-2.427-.465a4.902 4.902 0 01-1.772-1.153 4.902 4.902 0 01-1.153-1.772c-.247-.636-.416-1.363-.465-2.427-.047-1.024-.06-1.379-.06-3.808v-.63c0-2.43.013-2.784.06-3.808.049-1.064.218-1.791.465-2.427a4.902 4.902 0 011.153-1.772A4.902 4.902 0 015.45 2.525c.636-.247 1.363-.416 2.427-.465C8.901 2.013 9.256 2 11.685 2h.63zm-.081 1.802h-.468c-2.456 0-2.784.011-3.807.058-.975.045-1.504.207-1.857.344-.467.182-.8.398-1.15.748-.35.35-.566.683-.748 1.15-.137.353-.3.882-.344 1.857-.047 1.023-.058 1.351-.058 3.807v.468c0 2.456.011 2.784.058 3.807.045.975.207 1.504.344 1.857.182.466.399.8.748 1.15.35.35.683.566 1.15.748.353.137.882.3 1.857.344 1.054.048 1.37.058 4.041.058h.08c2.597 0 2.917-.01 3.96-.058.976-.045 1.505-.207 1.858-.344.466-.182.8-.398 1.15-.748.35-.35.566-.683.748-1.15.137-.353.3-.882.344-1.857.048-1.055.058-1.37.058-4.041v-.08c0-2.597-.01-2.917-.058-3.96-.045-.976-.207-1.505-.344-1.858a3.097 3.097 0 00-.748-1.15 3.098 3.098 0 00-1.15-.748c-.353-.137-.882-.3-1.857-.344-1.023-.047-1.351-.058-3.807-.058zM12 6.865a5.135 5.135 0 110 10.27 5.135 5.135 0 010-10.27zm0 1.802a3.333 3.333 0 100 6.666 3.333 3.333 0 000-6.666zm5.338-3.205a1.2 1.2 0 110 2.4 1.2 1.2 0 010-2.4z"></path>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-gray-700 mt-8 pt-4 text-center text-sm">
+                <p>&copy; 2025 Racines Togolaises. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Script for mobile menu toggle -->
+    <script>
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Fonctionnalités du Quiz
+        document.addEventListener('DOMContentLoaded', function() {
+            const quizQuestions = document.querySelectorAll('.quiz-question');
+            const quizOptions = document.querySelectorAll('.quiz-option');
+            const nextButton = document.getElementById('next-question');
+            const prevButton = document.getElementById('prev-question');
+            const quizResult = document.getElementById('quiz-result');
+            const scoreElement = document.getElementById('score');
+            const restartButton = document.getElementById('restart-quiz');
+            
+            let currentQuestion = 0;
+            let score = 0;
+            let answered = [false, false, false, false, false];
+            
+            // Handle option selection
+            quizOptions.forEach(option => {
+                option.addEventListener('click', function() {
+                    
+                    if (answered[currentQuestion]) return;
+                    
+                    // Marque la réponse
+                    answered[currentQuestion] = true;
+                    
+                    // Obtenrir toutes les options pour chaque questions
+                    const currentOptions = quizQuestions[currentQuestion].querySelectorAll('.quiz-option');
+                    
+                    // SUpprimer une selection antérieure
+                    currentOptions.forEach(opt => {
+                        opt.classList.remove('selected');
+                    });
+                    
+                    // ++++++++
+                    this.classList.add('selected');
+                    
+                    // Verifier si correct
+                    const isCorrect = this.getAttribute('data-correct') === 'true';
+                    
+                    // Afficher  correct/incorrect
+                    if (isCorrect) {
+                        this.classList.add('correct');
+                        score++;
+                    } else {
+                        this.classList.add('incorrect');
+                        
+                        // Find and highlight correct answer
+                        currentOptions.forEach(opt => {
+                            if (opt.getAttribute('data-correct') === 'true') {
+                                opt.classList.add('correct');
+                            }
+                        });
+                    }
+                });
+            });
+            
+            // Boutton suivant
+            nextButton.addEventListener('click', function() {
+                if (currentQuestion < quizQuestions.length - 1) {
+                    // Masquer la question
+                    quizQuestions[currentQuestion].classList.add('hidden');
+                    
+                    // Voir la question suivante
+                    currentQuestion++;
+                    quizQuestions[currentQuestion].classList.remove('hidden');
+                    
+                    updateButtonStates();
+                } else {
+                    // 
+                    quizQuestions[currentQuestion].classList.add('hidden');
+                    quizResult.classList.remove('hidden');
+                    scoreElement.textContent = score;
+                    nextButton.disabled = true;
+                    prevButton.disabled = true;
+                }
+            });
+            
+            // Bouton précédent
+            prevButton.addEventListener('click', function() {
+                if (currentQuestion > 0) {
+                    //Masquer la question actuelle
+                    quizQuestions[currentQuestion].classList.add('hidden');
+                    
+                    // Faire apparaitre la question précedente
+                    currentQuestion--;
+                    quizQuestions[currentQuestion].classList.remove('hidden');
+                    
+                    // Mettre à jour l'etat du bouton
+                    updateButtonStates();
+                }
+            });
+            
+            // Bouton Recommencer
+            restartButton.addEventListener('click', function() {
+                // Reinitianliser le score et les questions
+                score = 0;
+                answered = [false, false, false, false, false];
+                
+                // Effacer les selections antérieures
+                quizOptions.forEach(option => {
+                    option.classList.remove('selected', 'correct', 'incorrect');
+                });
+                
+                // Cacher le résultat et faire apparaître la première question
+                quizResult.classList.add('hidden');
+                quizQuestions.forEach((question, index) => {
+                    if (index === 0) {
+                        question.classList.remove('hidden');
+                    } else {
+                        question.classList.add('hidden');
+                    }
+                });
+                
+                // Renitialier la question en cours
+                currentQuestion = 0;
+                
+                // Mettre à jour l'etat du bouton
+                updateButtonStates();
+            });
+            
+            // Mettre l'etat des bouton à jour en fonction de la question actuelle
+            function updateButtonStates() {
+                prevButton.disabled = currentQuestion === 0;
+                nextButton.disabled = false;
+            }
+        });
+    </script>
+</body>
+</html>

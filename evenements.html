@@ -1,0 +1,307 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Événements et Culture - Racines Togolaises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'togo-green': '#006b3f',
+                        'togo-yellow': '#ffce00',
+                        'togo-red': '#d21034',
+                        'togo-white': '#ffffff'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+    </style>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-togo-green text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold">Racines Togolaises</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-togo-yellow transition duration-300">Accueil</a>
+                    <a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a>
+                    <a href="evenements.html" class="py-2 px-3 bg-togo-yellow text-togo-green rounded-md font-medium">Événements</a>
+                    <a href="partage.html" class="hover:text-togo-yellow transition duration-300">Partage</a>
+                    <a href="education.html" class="hover:text-togo-yellow transition duration-300">Éducation</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="flex flex-col space-y-4 py-4">
+                    <a href="index.html" class="hover:text-togo-yellow transition duration-300">Accueil</a>
+                    <a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a>
+                    <a href="evenements.html" class="py-2 px-3 bg-togo-yellow text-togo-green rounded-md font-medium">Événements</a>
+                    <a href="partage.html" class="hover:text-togo-yellow transition duration-300">Partage</a>
+                    <a href="education.html" class="hover:text-togo-yellow transition duration-300">Éducation</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="bg-togo-yellow py-12 mb-10">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-togo-green">Culture et Événements</h1>
+            <p class="text-xl text-togo-green max-w-2xl mx-auto">Découvrez la richesse culturelle du Togo à travers sa cuisine, sa musique, sa danse et son art</p>
+        </div>
+    </header>
+
+    <!--Bavbar de catégorie -->
+    <div class="container mx-auto px-4 mb-10">
+        <div class="flex overflow-x-auto pb-2 space-x-4 justify-center">
+            <button class="category-btn bg-togo-green text-white px-4 py-2 rounded-full whitespace-nowrap focus:outline-none" data-category="all">Tous</button>
+            <button class="category-btn bg-white text-togo-green px-4 py-2 rounded-full whitespace-nowrap focus:outline-none" data-category="cuisine">Cuisine</button>
+            <button class="category-btn bg-white text-togo-green px-4 py-2 rounded-full whitespace-nowrap focus:outline-none" data-category="musique">Musique</button>
+            <button class="category-btn bg-white text-togo-green px-4 py-2 rounded-full whitespace-nowrap focus:outline-none" data-category="danse">Danse</button>
+            <button class="category-btn bg-white text-togo-green px-4 py-2 rounded-full whitespace-nowrap focus:outline-none" data-category="art">Art</button>
+            <button class="category-btn bg-white text-togo-green px-4 py-2 rounded-full whitespace-nowrap focus:outline-none" data-category="interviews">Interviews</button>
+        </div>
+    </div>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8" id="events-container">
+            <!-- Cuisine -->
+            <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="cuisine">
+                <div class="h-60 bg-gray-300 relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <img src="cui.jpg" alt="Cuisine togolaise" class="object-cover h-full w-full">
+                    </div>
+                    <div class="absolute top-0 right-0 bg-togo-green text-white px-3 py-1 text-sm font-semibold">
+                        Cuisine
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-togo-green mb-2">La richesse de la cuisine togolaise</h3>
+                    <p class="text-gray-700 mb-4">Découvrez les saveurs uniques de plats comme le fufu, l'akumé, et le gboma dessi qui définissent la cuisine togolaise.</p>
+                    <a href="https://fr.wikipedia.org/wiki/Cuisine_togolaise" class="inline-block bg-togo-yellow text-togo-green font-bold py-2 px-4 rounded hover:bg-togo-green hover:text-togo-yellow transition duration-300">Lire plus</a>
+                </div>
+            </div>
+
+            <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="cuisine">
+                <div class="h-48 bg-gray-300 relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <img src="piment.jpg" alt="Cuisine togolaise" class="object-cover h-full w-full">
+                    </div>
+                    <div class="absolute top-0 right-0 bg-togo-green text-white px-3 py-1 text-sm font-semibold">
+                        Cuisine
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-togo-green mb-2">Le piment togolais : un incontournable</h3>
+                    <p class="text-gray-700 mb-4">Le fameux piment togolais, l'un des plus forts au monde, est un élément essentiel de la cuisine locale. Découvrez ses variétés et utilisations.</p>
+                    <a href="#" class="inline-block bg-togo-yellow text-togo-green font-bold py-2 px-4 rounded hover:bg-togo-green hover:text-togo-yellow transition duration-300">Lire plus</a>
+                </div>
+            </div>
+
+            <!-- Musique -->
+            <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="musique">
+                <div class="h-48 bg-gray-300 relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <img src="mus1.jpg" alt="Cuisine togolaise" class="object-cover h-full w-full">
+                    </div>
+                    <div class="absolute top-0 right-0 bg-togo-red text-white px-3 py-1 text-sm font-semibold">
+                        Musique
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-togo-green mb-2">Évolution de la musique togolaise</h3>
+                    <p class="text-gray-700 mb-4">De la musique traditionnelle aux sons contemporains, découvrez comment la musique togolaise a évolué tout en préservant son identité.</p>
+                    <a href="https://fr.wikipedia.org/wiki/Musique_du_Togo" class="inline-block bg-togo-red text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-togo-red hover:border hover:border-togo-red transition duration-300">Lire plus</a>
+                </div>
+            </div>
+
+            <!-- Danse -->
+            <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="danse">
+                <div class="h-48 bg-gray-300 relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <img src="danse.jpg" alt="Cuisine togolaise" class="object-cover h-full w-full">
+                    </div>
+                    <div class="absolute top-0 right-0 bg-togo-yellow text-togo-green px-3 py-1 text-sm font-semibold">
+                        Danse
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-togo-green mb-2">Les danses traditionnelles togolaises</h3>
+                    <p class="text-gray-700 mb-4">Agbadja, Akpesse, Atrikpoe... Chaque région du Togo possède ses propres danses qui racontent l'histoire et la culture locales.</p>
+                    <a href="#" class="inline-block bg-togo-green text-togo-yellow font-bold py-2 px-4 rounded hover:bg-togo-yellow hover:text-togo-green transition duration-300">Lire plus</a>
+                </div>
+            </div>
+
+            <!-- Art -->
+            <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="art">
+                <div class="h-48 bg-gray-300 relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <img src="art.jpg" alt="Cuisine togolaise" class="object-cover h-full w-full">
+                    </div>
+                    <div class="absolute top-0 right-0 bg-togo-white border border-togo-green text-togo-green px-3 py-1 text-sm font-semibold">
+                        Art
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-togo-green mb-2">Art contemporain togolais</h3>
+                    <p class="text-gray-700 mb-4">Découvrez comment les artistes togolais contemporains mêlent traditions et modernité pour créer des œuvres uniques reconnues internationalement.</p>
+                    <a href="https://arttemoinemergence.com/lome-togo" class="inline-block bg-togo-white text-togo-green font-bold py-2 px-4 rounded border border-togo-green hover:bg-togo-green hover:text-white transition duration-300">Lire plus</a>
+                </div>
+            </div>
+
+            <!-- Interviews -->
+            <div class="event-card bg-white rounded-lg shadow-md overflow-hidden transition duration-300" data-category="interviews">
+                <div class="h-48 bg-gray-300 relative">
+                    <div class="absolute inset-0 flex items-center justify-center">
+                        <img src="caj.jpg" alt="Cuisine togolaise" class="object-cover h-full w-full">
+                    </div>
+                    <div class="absolute top-0 right-0 bg-togo-red text-white px-3 py-1 text-sm font-semibold">
+                        Interview
+                    </div>
+                </div>
+                <div class="p-6">
+                    <h3 class="text-xl font-bold text-togo-green mb-2">Entretien avec un maître percussionniste</h3>
+                    <p class="text-gray-700 mb-4">Découvrez l'histoire de Koffi Amouzou, maître percussionniste qui perpétue les traditions musicales togolaises depuis plus de 40 ans.</p>
+                    <a href="#" class="inline-block bg-togo-red text-white font-bold py-2 px-4 rounded hover:bg-white hover:text-togo-red hover:border hover:border-togo-red transition duration-300">Lire plus</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Evènements à venir -->
+        <div class="mt-16">
+            <h2 class="text-3xl font-bold text-togo-green mb-8">Événements à venir</h2>
+            
+            <div class="overflow-x-auto">
+                <table class="min-w-full bg-white rounded-lg overflow-hidden">
+                    <thead class="bg-togo-green text-white">
+                        <tr>
+                            <th class="py-3 px-4 text-left">Événement</th>
+                            <th class="py-3 px-4 text-left">Date</th>
+                            <th class="py-3 px-4 text-left">Lieu</th>
+                            <th class="py-3 px-4 text-left">Description</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">Festival des Arts et de la Culture</td>
+                            <td class="py-3 px-4">15-20 mai 2025</td>
+                            <td class="py-3 px-4">Lomé</td>
+                            <td class="py-3 px-4">Célébration annuelle de l'art et de la culture togolaise</td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">Exposition "Togo d'hier et d'aujourd'hui"</td>
+                            <td class="py-3 px-4">10 juin - 15 juillet 2025</td>
+                            <td class="py-3 px-4">Palais de Lomé</td>
+                            <td class="py-3 px-4">Exposition photographique retraçant l'évolution du pays</td>
+                        </tr>
+                        <tr class="border-b hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">Concours de cuisine traditionnelle</td>
+                            <td class="py-3 px-4">25 juin 2025</td>
+                            <td class="py-3 px-4">Kpalimé</td>
+                            <td class="py-3 px-4">Compétition culinaire mettant en valeur les plats togolais</td>
+                        </tr>
+                        <tr class="hover:bg-gray-50">
+                            <td class="py-3 px-4 font-medium">Festival International de Musique</td>
+                            <td class="py-3 px-4">3-5 août 2025</td>
+                            <td class="py-3 px-4">Plage de Lomé</td>
+                            <td class="py-3 px-4">Grand festival réunissant des artistes locaux et internationaux</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-togo-green text-white py-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Racines Togolaises</h3>
+                    <p class="mb-4 max-w-md">Un site dédié à l'histoire, la culture et le patrimoine du Togo, célébrant notre passé et construisant notre avenir.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-togo-yellow">Liens rapides</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="hover:text-togo-yellow transition duration-300">Accueil</a></li>
+                            <li><a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a></li>
+                            <li><a href="evenements.html" class="hover:text-togo-yellow transition duration-300">Événements</a></li>
+                            <li><a href="partage.html" class="hover:text-togo-yellow transition duration-300">Partage</a></li>
+                            <li><a href="education.html" class="hover:text-togo-yellow transition duration-300">Éducation</a></li>
+                            <li></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-togo-yellow">Contact</h4>
+                        <ul class="space-y-2">
+                            <li>Email: contact@togoracines.tg</li>
+                            <li>Téléphone: +228 93 39 19 49</li>
+                            <li>Lomé, Togo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-togo-yellow mt-8 pt-6 text-center">
+                <p>&copy; 2025 Racines Togolaises. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Filtre par catégorie
+        const categoryButtons = document.querySelectorAll('.category-btn');
+        const eventCards = document.querySelectorAll('.event-card');
+
+        categoryButtons.forEach(button => {
+            button.addEventListener('click', function() {
+                // Vider le contenu de chaque bouton
+                categoryButtons.forEach(btn => {
+                    btn.classList.remove('bg-togo-green', 'text-white');
+                    btn.classList.add('bg-white', 'text-togo-green');
+                });
+                
+                // Ajouter une classe correspondant aux boutons choisis
+                this.classList.remove('bg-white', 'text-togo-green');
+                this.classList.add('bg-togo-green', 'text-white');
+                
+                const category = this.getAttribute('data-category');
+                
+                // Afficher/cacher éléments par catégorie
+                eventCards.forEach(card => {
+                    if (category === 'all' || card.getAttribute('data-category') === category) {
+                        card.style.display = 'block';
+                    } else {
+                        card.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

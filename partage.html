@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plateforme de Partage - Racines Togolaises</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        'togo-green': '#006b3f',
+                        'togo-yellow': '#ffce00',
+                        'togo-red': '#d21034',
+                        'togo-white': '#ffffff'
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <!-- Navigation -->
+    <nav class="bg-togo-green text-white shadow-lg">
+        <div class="container mx-auto px-4">
+            <div class="flex items-center justify-between py-4">
+                <div class="flex items-center">
+                    <span class="text-2xl font-bold">Racines Togolaises</span>
+                </div>
+                <div class="hidden md:flex items-center space-x-8">
+                    <a href="index.html" class="hover:text-togo-yellow transition duration-300">Accueil</a>
+                    <a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a>
+                    <a href="evenements.html" class="hover:text-togo-yellow transition duration-300">Événements</a>
+                    <a href="partage.html" class="py-2 px-3 bg-togo-yellow text-togo-green rounded-md font-medium">Partage</a>
+                    <a href="education.html" class="hover:text-togo-yellow transition duration-300">Éducation</a>
+                    <a href="gouv.html" class="hover:text-togo-yellow transition duration-300">Gouv</a>
+                </div>
+                <div class="md:hidden flex items-center">
+                    <button id="menu-toggle" class="focus:outline-none">
+                        <svg class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16"></path>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+            <div id="mobile-menu" class="md:hidden hidden">
+                <div class="flex flex-col space-y-4 py-4">
+                    <a href="index.html" class="hover:text-togo-yellow transition duration-300">Accueil</a>
+                    <a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a>
+                    <a href="evenements.html" class="hover:text-togo-yellow transition duration-300">Événements</a>
+                    <a href="partage.html" class="py-2 px-3 bg-togo-yellow text-togo-green rounded-md font-medium">Partage</a>
+                    <a href="education.html" class="hover:text-togo-yellow transition duration-300">Éducation</a>
+                    <a href="gouv.html" class="hover:text-togo-yellow transition duration-300">Gouv</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero section -->
+    <header class="bg-togo-white py-12 mb-10 border-t-8 border-b-8 border-togo-red">
+        <div class="container mx-auto px-4 text-center">
+            <h1 class="text-4xl md:text-5xl font-bold mb-4 text-togo-red">Plateforme de Partage</h1>
+            <p class="text-xl text-togo-green max-w-2xl mx-auto">Partagez vos souvenirs, vos réflexions et vos créations artistiques sur le Togo</p>
+        </div>
+    </header>
+
+    <!-- Main content -->
+    <main class="container mx-auto px-4 py-8">
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-8">
+            <!-- forum main -->
+            <div class="lg:col-span-2 space-y-8">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-togo-green mb-6">Forum de discussion</h2>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-2">Partagez votre expérience</h3>
+                        <form id="forum-form" class="space-y-4">
+                            <div>
+                                <label for="name" class="block text-gray-700 mb-1">Votre nom</label>
+                                <input type="text" id="name" name="name" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-togo-green">
+                            </div>
+                            <div>
+                                <label for="topic" class="block text-gray-700 mb-1">Sujet</label>
+                                <input type="text" id="topic" name="topic" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-togo-green">
+                            </div>
+                            <div>
+                                <label for="message" class="block text-gray-700 mb-1">Votre message</label>
+                                <textarea id="message" name="message" rows="4" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-togo-green"></textarea>
+                            </div>
+                            <button type="submit" class="bg-togo-green text-white px-4 py-2 rounded hover:bg-togo-yellow hover:text-togo-green transition duration-300">Publier</button>
+                        </form>
+                    </div>
+                    
+                    <hr class="my-6 border-gray-200">
+                    
+                    <div id="forum-posts" class="space-y-6">
+                        <h3 class="text-lg font-semibold mb-4">Discussions récentes</h3>
+                        
+                        <!-- exemple de poste 1 -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-togo-green">Souvenirs de la fête de l'indépendance de 1980</h4>
+                                <span class="text-sm text-gray-500">15 avril 2025</span>
+                            </div>
+                            <p class="text-gray-700 mb-3">Je me souviens encore des célébrations du 20ème anniversaire de l'indépendance. Les rues de Lomé étaient remplies de personnes célébrant avec des danses et des chants traditionnels. C'était une période d'espoir pour le pays.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-togo-green">Par Kofi Mensah</span>
+                                <button class="text-sm text-togo-green hover:underline">Répondre</button>
+                            </div>
+                        </div>
+                        
+                        <!-- exemple de poste 1 -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-togo-green">L'évolution de notre architecture depuis l'indépendance</h4>
+                                <span class="text-sm text-gray-500">10 avril 2025</span>
+                            </div>
+                            <p class="text-gray-700 mb-3">J'ai remarqué comment l'architecture togolaise a évolué au fil des décennies, fusionnant les styles traditionnels avec des influences modernes. Les bâtiments de notre capitale racontent l'histoire de notre pays.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-togo-green">Par Ama Koudjo</span>
+                                <button class="text-sm text-togo-green hover:underline">Répondre</button>
+                            </div>
+                        </div>
+                        
+                        <!-- exemple de poste 1 -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <div class="flex justify-between items-start mb-2">
+                                <h4 class="font-bold text-togo-green">La musique comme témoin de notre histoire</h4>
+                                <span class="text-sm text-gray-500">5 avril 2025</span>
+                            </div>
+                            <p class="text-gray-700 mb-3">Les chansons togolaises des différentes époques reflètent parfaitement les défis et les espoirs de notre nation. De l'indépendance jusqu'à aujourd'hui, notre musique a été un fidèle témoin de notre parcours.</p>
+                            <div class="flex justify-between items-center">
+                                <span class="text-sm font-medium text-togo-green">Par Edem Agbodjan</span>
+                                <button class="text-sm text-togo-green hover:underline">Répondre</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Art contributions section -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h2 class="text-2xl font-bold text-togo-red mb-6">Contributions artistiques</h2>
+                    
+                    <div class="mb-6">
+                        <h3 class="text-lg font-semibold mb-2">Partagez vos créations</h3>
+                        <form id="art-form" class="space-y-4">
+                            <div>
+                                <label for="art-name" class="block text-gray-700 mb-1">Votre nom</label>
+                                <input type="text" id="art-name" name="art-name" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-togo-red">
+                            </div>
+                            <div>
+                                <label for="art-title" class="block text-gray-700 mb-1">Titre de votre œuvre</label>
+                                <input type="text" id="art-title" name="art-title" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-togo-red">
+                            </div>
+                            <div>
+                                <label for="art-type" class="block text-gray-700 mb-1">Type d'œuvre</label>
+                                <select id="art-type" name="art-type" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-togo-red">
+                                    <option value="poeme">Poème</option>
+                                    <option value="chanson">Chanson</option>
+                                    <option value="peinture">Peinture/Dessin</option>
+                                    <option value="photo">Photographie</option>
+                                    <option value="autre">Autre</option>
+                                </select>
+                            </div>
+                            <div>
+                                <label for="art-content" class="block text-gray-700 mb-1">Votre création (texte ou description)</label>
+                                <textarea id="art-content" name="art-content" rows="4" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-togo-red"></textarea>
+                            </div>
+                            <div>
+                                <label for="art-file" class="block text-gray-700 mb-1">Télécharger un fichier (optionnel)</label>
+                                <input type="file" id="art-file" name="art-file" class="w-full p-2 border border-gray-300 rounded focus:outline-none focus:ring-2 focus:ring-togo-red">
+                            </div>
+                            <button type="submit" class="bg-togo-red text-white px-4 py-2 rounded hover:bg-white hover:text-togo-red hover:border hover:border-togo-red transition duration-300">Partager</button>
+                        </form>
+                    </div>
+                    
+                    <hr class="my-6 border-gray-200">
+                    
+                    <div id="art-gallery" class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                        <h3 class="text-lg font-semibold mb-4 col-span-full">Galerie des contributions</h3>
+                        
+                        <!--exmple art 1-->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-togo-red mb-2">Ode au Togo</h4>
+                            <p class="text-sm text-gray-500 mb-2">Poème par Yawo Eklou</p>
+                            <p class="text-gray-700 italic mb-3">
+                                "Terre de nos ancêtres, berceau de nos rêves<br>
+                                Du nord au sud, tes paysages s'élèvent<br>
+                                Togo, pays de diversité et d'unité<br>
+                                Tu avances fièrement vers ta destinée"
+                            </p>
+                        </div>
+                        
+                        <!-- exmple art 2 -->
+                        <div class="bg-gray-50 p-4 rounded-lg">
+                            <h4 class="font-bold text-togo-red mb-2">Marché de Kara</h4>
+                            <p class="text-sm text-gray-500 mb-2">Photographie par Claire Mensah</p>
+                            <div class="h-40 bg-gray-300 flex items-center justify-center mb-3">
+                                <img src="https://www.togofirst.com/media/k2/items/cache/70bbde6b14f91bb1d9d7cedc00c932f7_L.jpg" alt="Marché de Kara" class="object-cover h-full w-full">
+                            </div>
+                            <p class="text-gray-700 text-sm">Une scène vibrante de la vie quotidienne au marché de Kara, capturant les couleurs et l'énergie du commerce local.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Sidebar -->
+            <div class="lg:col-span-1 space-y-8">
+                <!--  -->
+                <div class="bg-togo-yellow bg-opacity-20 p-6 rounded-lg border border-togo-yellow">
+                    <h3 class="text-xl font-bold text-togo-green mb-4">Règles de la communauté</h3>
+                    <ul class="space-y-2 list-disc pl-5 text-gray-700">
+                        <li>Respectez les autres membres de la communauté</li>
+                        <li>Partagez des contenus appropriés et constructifs</li>
+                        <li>Évitez les propos haineux ou discriminatoires</li>
+                        <li>Ne publiez pas d'informations personnelles</li>
+                        <li>Les créations doivent être originales ou correctement créditées</li>
+                    </ul>
+                </div>
+                
+                <!-- Sujets de suggestions -->
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-xl font-bold text-togo-green mb-4">Idées de sujets</h3>
+                    <ul class="space-y-3">
+                        <li class="p-2 hover:bg-gray-50 rounded transition duration-200">
+                            <a href="#" class="block text-togo-green hover:underline">Souvenirs d'enfance au Togo</a>
+                        </li>
+                        <li class="p-2 hover:bg-gray-50 rounded transition duration-200">
+                            <a href="#" class="block text-togo-green hover:underline">Comment avez-vous vécu les transitions politiques?</a>
+                        </li>
+                        <li class="p-2 hover:bg-gray-50 rounded transition duration-200">
+                            <a href="#" class="block text-togo-green hover:underline">Traditions familiales togolaises</a>
+                        </li>
+                        <li class="p-2 hover:bg-gray-50 rounded transition duration-200">
+                            <a href="#" class="block text-togo-green hover:underline">Le Togo dans 50 ans : vos perspectives</a>
+                        </li>
+                        <li class="p-2 hover:bg-gray-50 rounded transition duration-200">
+                            <a href="#" class="block text-togo-green hover:underline">Les défis et opportunités pour la jeunesse togolaise</a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <!-- Contributeur -->
+                <div class="bg-togo-green p-6 rounded-lg shadow-md text-white">
+                    <h3 class="text-xl font-bold mb-4">Contributeur du mois</h3>
+                    <div class="flex items-center space-x-4 mb-4">
+                        <div class="h-16 w-16 bg-togo-yellow rounded-full flex items-center justify-center">
+                            <span class="text-xl font-bold text-togo-green">KD</span>
+                        </div>
+                        <div>
+                            <h4 class="font-bold">Kossi Dogbevi</h4>
+                            <p class="text-sm text-togo-yellow">Artiste et écrivain</p>
+                        </div>
+                    </div>
+                    <p class="text-sm">Reconnu pour ses poèmes inspirants et ses photographies captivantes du Togo rural, Kossi a contribué plus de 15 œuvres ce mois-ci.</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-togo-green text-white py-8 mt-16">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between">
+                <div class="mb-6 md:mb-0">
+                    <h3 class="text-xl font-bold mb-4">Racines Togolaises</h3>
+                    <p class="mb-4 max-w-md">Un site dédié à l'histoire, la culture et le patrimoine du Togo, célébrant notre passé et construisant notre avenir.</p>
+                </div>
+                <div class="grid grid-cols-2 md:grid-cols-3 gap-8">
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-togo-yellow">Liens rapides</h4>
+                        <ul class="space-y-2">
+                            <li><a href="index.html" class="hover:text-togo-yellow transition duration-300">Accueil</a></li>
+                            <li><a href="histoire.html" class="hover:text-togo-yellow transition duration-300">Histoire</a></li>
+                            <li><a href="evenements.html" class="hover:text-togo-yellow transition duration-300">Événements</a></li>
+                            <li><a href="partage.html" class="hover:text-togo-yellow transition duration-300">Partage</a></li>
+                            <li><a href="education.html" class="hover:text-togo-yellow transition duration-300">Éducation</a></li>
+                            <li><a href="gouv.html" class="hover:text-togo-yellow transition duration-300">gouvernement</a></li>
+                        </ul>
+                    </div>
+                    <div>
+                        <h4 class="text-lg font-semibold mb-3 text-togo-yellow">Contact</h4>
+                        <ul class="space-y-2">
+                            <li>Email: contact@togoracines.tg</li>
+                            <li>Téléphone: +228 93 39 19 49</li>
+                            <li>Lomé, Togo</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <div class="border-t border-togo-yellow mt-8 pt-6 text-center">
+                <p>&copy; 2025 Racines Togolaises. Tous droits réservés.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        document.getElementById('menu-toggle').addEventListener('click', function() {
+            const mobileMenu = document.getElementById('mobile-menu');
+            mobileMenu.classList.toggle('hidden');
+        });
+
+        // Validation de formulaire de forum
+        document.getElementById('forum-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('name').value;
+            const topic = document.getElementById('topic').value;
+            const message = document.getElementById('message').value;
+            
+            if(name && topic && message) {
+                // Créer un nouveau post
+                const newPost = document.createElement('div');
+                newPost.className = 'bg-gray-50 p-4 rounded-lg';
+                
+                const currentDate = new Date().toLocaleDateString('fr-FR');
+                
+                newPost.innerHTML = `
+                    <div class="flex justify-between items-start mb-2">
+                        <h4 class="font-bold text-togo-green">${topic}</h4>
+                        <span class="text-sm text-gray-500">${currentDate}</span>
+                    </div>
+                    <p class="text-gray-700 mb-3">${message}</p>
+                    <div class="flex justify-between items-center">
+                        <span class="text-sm font-medium text-togo-green">Par ${name}</span>
+                        <button class="text-sm text-togo-green hover:underline">Répondre</button>
+                    </div>
+                `;
+                
+                // AJouter le nouveau post en première position
+                const forumPosts = document.getElementById('forum-posts');
+                forumPosts.insertBefore(newPost, forumPosts.children[1]);
+                
+                // Effacer le formulaire
+                this.reset();
+                
+                alert('Votre message a été publié avec succès!');
+            } else {
+                alert('Veuillez remplir tous les champs.');
+            }
+        });
+
+        // Validation du formulaire d'art
+        document.getElementById('art-form').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const name = document.getElementById('art-name').value;
+            const title = document.getElementById('art-title').value;
+            const type = document.getElementById('art-type').value;
+            const content = document.getElementById('art-content').value;
+            
+            if(name && title && content) {
+                //Cre un élement dans la section art
+                const newArt = document.createElement('div');
+                newArt.className = 'bg-gray-50 p-4 rounded-lg';
+                
+                // Affichage par filtre
+                if(type === 'poeme' || type === 'chanson') {
+                    newArt.innerHTML = `
+                        <h4 class="font-bold text-togo-red mb-2">${title}</h4>
+                        <p class="text-sm text-gray-500 mb-2">${type === 'poeme' ? 'Poème' : 'Chanson'} par ${name}</p>
+                        <p class="text-gray-700 italic mb-3">${content.replace(/\n/g, '<br>')}</p>
+                    `;
+                } else {
+                    newArt.innerHTML = `
+                        <h4 class="font-bold text-togo-red mb-2">${title}</h4>
+                        <p class="text-sm text-gray-500 mb-2">${type === 'peinture' ? 'Peinture/Dessin' : (type === 'photo' ? 'Photographie' : 'Création')} par ${name}</p>
+                        <div class="h-40 bg-gray-300 flex items-center justify-center mb-3">
+                            <svg class="h-16 w-16 text-gray-500" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z"></path>
+                            </svg>
+                        </div>
+                        <p class="text-gray-700 text-sm">${content}</p>
+                    `;
+                }
+                
+                // Ajouter l'art dans la gallerie d'art
+                const artGallery = document.getElementById('art-gallery');
+                artGallery.appendChild(newArt);
+                
+                // Effacer le formulaire
+                this.reset();
+                
+                alert('Votre création a été partagée avec succès!');
+            } else {
+                alert('Veuillez remplir tous les champs obligatoires.');
+            }
+        });
+    </script>
+</body>
+</html>
